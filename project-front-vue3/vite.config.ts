@@ -28,6 +28,7 @@ export default defineConfig({
         // presets
         "vue",
         VueRouterAutoImports,
+        "@vueuse/core",
       ],
     }),
   ],
