@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
+import { routes } from "vue-router/auto-routes";
+// import HomeView from "../views/HomeView.vue";
+// import AboutView from "../views/AboutView.vue";
 
-import HomeView from "../views/HomeView.vue";
-import AboutView from "../views/AboutView.vue";
-
-const routes = [
-  { path: "/", component: HomeView },
-  { path: "/about", component: AboutView },
-];
+// const routes = [
+//   { path: "/", component: HomeView },
+//   { path: "/about", component: AboutView },
+// ];
 
 // 路由模式
 // hash: 带#号，即浏览器地址栏中的#符号
