@@ -1,7 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 import routes from "~pages";
-import HomeView from "../views/HomeView.vue";
-import AboutView from "../views/AboutView.vue";
 
 // 路由模式
 // hash: 带#号，即浏览器地址栏中的#符号
@@ -16,4 +14,13 @@ const router = createRouter({
   routes,
 });
 
+// 重定向
+router.beforeEach((to, from, next) => {
+  console.log(to, from);
+  if (to.path === "/home") {
+    next({ path: "/" });
+  } else {
+    next();
+  }
+});
 export default router;
