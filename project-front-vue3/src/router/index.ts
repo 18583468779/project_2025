@@ -21,4 +21,13 @@ const router = createRouter({
   routes,
 });
 
+// 重定向
+router.beforeEach((to, from, next) => {
+  console.log(to, from);
+  if (to.path === "/home") {
+    next({ path: "/" });
+  } else {
+    next();
+  }
+});
 export default router;
