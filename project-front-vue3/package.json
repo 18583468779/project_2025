@@ -15,6 +15,7 @@
     "reset-css": "^5.0.2",
     "tailwindcss": "^4.1.14",
     "unplugin-auto-import": "^20.2.0",
+    "vite-plugin-mock": "^3.0.2",
     "vite-plugin-pages": "^0.33.1",
     "vue": "^3.5.22",
     "vue-router": "4"

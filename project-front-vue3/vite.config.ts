@@ -9,6 +9,7 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import Icons from "unplugin-icons/vite";
 import IconsResolver from "unplugin-icons/resolver";
 import Layouts from "vite-plugin-vue-layouts";
+import { viteMockServe } from "vite-plugin-mock";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -47,5 +48,10 @@ export default defineConfig({
       layoutsDirs: "src/layouts",
       defaultLayout: "default",
     }), // 自动导入布局组件
+    viteMockServe({
+      // 自动导入 mock 模块
+      mockPath: "mock",
+      enable: true,
+    }),
   ],
 });
