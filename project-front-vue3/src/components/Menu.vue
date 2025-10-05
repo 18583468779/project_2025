@@ -1,5 +1,5 @@
 <template>
-  <div class="flex bg-gray-600">
+  <div class="flex">
     <router-link to="/" class="item">产品</router-link>
     <router-link to="/community" class="item">社区</router-link>
     <router-link to="/study" class="item">学习</router-link>
@@ -7,9 +7,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-console.log("123213112312321322");
-</script>
+<script setup lang="ts"></script>
 
 <style>
 @reference "tailwindcss";

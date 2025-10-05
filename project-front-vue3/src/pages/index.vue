@@ -1,7 +1,38 @@
 <script setup lang="ts">
-const count = ref(0);
+import type { SwiperItemType } from "@/components/types";
+import bg from "../assets/images/bg.png";
+
+const items: SwiperItemType[] = [
+  {
+    image: bg,
+    title: "传播技术的种子",
+    subTitle: "让技术没有门槛，让沟通没有障碍",
+  },
+  {
+    image: bg,
+    title: "传播技术的种子",
+    subTitle: "让技术没有门槛，让沟通没有障碍",
+  },
+  {
+    image: bg,
+    title: "传播技术的种子",
+    subTitle: "让技术没有门槛，让沟通没有障碍",
+  },
+  {
+    image: bg,
+    title: "传播技术的种子",
+    subTitle: "让技术没有门槛，让沟通没有障碍",
+  },
+  {
+    image: bg,
+    title: "传播技术的种子",
+    subTitle: "让技术没有门槛，让沟通没有障碍",
+  },
+];
 </script>
 
 <template>
-  <h1>Home</h1>
+  <div>
+    <Swiper :items="items" height="36rem"></Swiper>
+  </div>
 </template>

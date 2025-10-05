@@ -1,5 +1,13 @@
 <template>
-  <div class="shadow-md fixed top-0 w-full bg-gray-600 bg-opacity-30">
+  <div
+    class="fixed z-99 top-0 w-full bg-opacity-30"
+    :class="[
+      {
+        'bg-gray-600 bg-opacity-30 transition-all duration-300 shadow-lg':
+          y > 100,
+      },
+    ]"
+  >
     <Container>
       <img
         src="/512x512.png"
@@ -16,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-console.log("first");
+const { y } = useWindowScroll();
 </script>
 
 <style scoped></style>

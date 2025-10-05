@@ -13,6 +13,7 @@ declare module 'vue' {
     Menu: typeof import('./src/components/Menu.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Swiper: typeof import('./src/components/Swiper.vue')['default']
     UserComponent: typeof import('./src/components/user/UserComponent.vue')['default']
   }
 }

@@ -7,7 +7,7 @@
       "unplugin-vue-router/client",
       "vite-plugin-vue-layouts/client"
     ],
-
+    "noImplicitAny": false,
     /* Linting */
     "strict": true,
     "baseUrl": ".",
