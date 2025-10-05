@@ -19,9 +19,15 @@
         >
           <Container class="h-full">
             <div class="flex flex-col justify-center items-start lt-sm:px-4">
-              <p class="lt-sm:text-xl text-4xl font-bold text-white">{{ item.title }}</p>
-              <!-- <p class="text-xl sm:text-4xl font-bold text-white">{{ item.title }}</p> -->
-              <p class="text-sm sm:text-xl text-gray-100 pt-4">{{ item.subTitle }}</p>
+              <p class="text-4xl font-bold text-white" style="font-size: 4rem">
+                {{ item.title }}
+              </p>
+              <p
+                class="text-sm text-gray-100 pt-4"
+                style="font-size: 1.5rem; padding-top: 2rem"
+              >
+                {{ item.subTitle }}
+              </p>
             </div>
           </Container>
         </div>
@@ -41,31 +47,31 @@
 </template>
 
 <script setup lang="ts">
-import type { Swiper as SwiperType } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Navigation, Pagination } from 'swiper/modules'
+import type { Swiper as SwiperType } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation, Pagination } from "swiper/modules";
 
 // Import Swiper styles
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-import type { SwiperItemType } from './types'
+import type { SwiperItemType } from "./types";
 
 const props = defineProps({
   height: {
     type: String,
-    default: 'h-80'
+    default: "h-80",
   },
   items: {
     type: Array as PropType<Array<SwiperItemType>>,
-    default: () => []
-  }
-})
+    default: () => [],
+  },
+});
 
-const modules = [Navigation, Pagination]
+const modules = [Navigation, Pagination];
 
-const emits = defineEmits(['change'])
+const emits = defineEmits(["change"]);
 
 function getClassAndStyle(str: string) {
   // props.height
@@ -73,16 +79,16 @@ function getClassAndStyle(str: string) {
   // 如果height的值包含h-，则返回 {string: '', class: str}
   return {
     style: /(rem|em|px)/.test(props.height) ? { height: str } : {},
-    class: /h-/.test(props.height) ? str : ''
-  }
+    class: /h-/.test(props.height) ? str : "",
+  };
 }
 
 const onSwiper = (swiper: SwiperType) => {
-  console.log(swiper)
-}
+  console.log(swiper);
+};
 const onSlideChange = (e) => {
-  emits('change', e)
-}
+  emits("change", e);
+};
 </script>
 
 <style scoped lang="scss">
