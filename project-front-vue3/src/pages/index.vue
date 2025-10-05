@@ -3,7 +3,5 @@ const count = ref(0);
 </script>
 
 <template>
-  <HelloWorld />
-  <UserComponent />
-  <el-button type="primary">Primary Button</el-button>
+  <h1>Home</h1>
 </template>
