@@ -5,4 +5,5 @@ const count = ref(0);
 <template>
   <HelloWorld />
   <UserComponent />
+  <el-button type="primary">Primary Button</el-button>
 </template>
