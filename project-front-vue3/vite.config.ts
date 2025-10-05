@@ -6,6 +6,8 @@ import AutoImport from "unplugin-auto-import/vite";
 import { VueRouterAutoImports } from "unplugin-vue-router";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import Icons from "unplugin-icons/vite";
+import IconsResolver from "unplugin-icons/resolver";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -35,7 +37,10 @@ export default defineConfig({
     Components({
       directoryAsNamespace: true, // 目录作为命名空间
       collapseSamePrefixes: true, // 相同前缀的组件会合并为一个
-      resolvers: [ElementPlusResolver()], // 自动导入 Element Plus 组件
+      resolvers: [ElementPlusResolver(), IconsResolver({ prefix: "icon" })], // 自动导入 Element Plus 组件, 自动导入图标组件
+    }),
+    Icons({
+      autoInstall: true, // 自动安装图标
     }),
   ],
 });
