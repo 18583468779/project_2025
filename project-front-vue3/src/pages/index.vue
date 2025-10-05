@@ -34,5 +34,13 @@ const items: SwiperItemType[] = [
 <template>
   <div>
     <Swiper :items="items" height="36rem"></Swiper>
+    <Card
+      :image="bg"
+      imageType="avatar"
+      title="title11"
+      subTitle="subTitle11"
+      border
+    >
+    </Card>
   </div>
 </template>
