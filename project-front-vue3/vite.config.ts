@@ -8,6 +8,7 @@ import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import Icons from "unplugin-icons/vite";
 import IconsResolver from "unplugin-icons/resolver";
+import Layouts from "vite-plugin-vue-layouts";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -42,5 +43,9 @@ export default defineConfig({
     Icons({
       autoInstall: true, // 自动安装图标
     }),
+    Layouts({
+      layoutsDirs: "src/layouts",
+      defaultLayout: "default",
+    }), // 自动导入布局组件
   ],
 });

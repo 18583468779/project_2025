@@ -1,13 +1,6 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router/auto";
 import { routes } from "vue-router/auto-routes";
-// import HomeView from "../views/HomeView.vue";
-// import AboutView from "../views/AboutView.vue";
-
-// const routes = [
-//   { path: "/", component: HomeView },
-//   { path: "/about", component: AboutView },
-// ];
-
+import { setupLayouts } from "virtual:generated-layouts";
 // 路由模式
 // hash: 带#号，即浏览器地址栏中的#符号
 // history: 不带#号，即浏览器地址栏中没有#符号
@@ -17,13 +10,12 @@ import { routes } from "vue-router/auto-routes";
  *  不利于我们的SEO -> 抓取HTML
  */
 const router = createRouter({
-  history: createWebHistory(),
-  routes,
+  history: createWebHistory(), // 明确指定 history 模式
+  routes: setupLayouts(routes), // 自动添加布局组件
 });
 
 // 重定向
 router.beforeEach((to, from, next) => {
-  console.log(to, from);
   if (to.path === "/home") {
     next({ path: "/" });
   } else {
