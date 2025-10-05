@@ -9,20 +9,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    },
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitAny": false, //
-    "noImplicitThis": false,
-    "noImplicitReturns": false,
-    "noImplicitOverride": false,
-    "noImplicitAny": false,
-    "noImplicitThis": false,
-    "noImplicitReturns": false,
-    "noImplicitOverride": false,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-    "esModuleInterop": true
+    }
   },
   "include": [
     "src/**/*.ts",
@@ -30,6 +17,7 @@
     "src/**/*.vue",
     "src/**/*.d.ts",
     "typed-router.d.ts",
-    "auto-imports.d.ts"
+    "auto-imports.d.ts",
+    "components.d.ts"
   ]
 }

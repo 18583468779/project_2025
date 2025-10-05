@@ -4,7 +4,7 @@ import VueRouter from "unplugin-vue-router/vite";
 import tailwindcss from "@tailwindcss/vite";
 import AutoImport from "unplugin-auto-import/vite";
 import { VueRouterAutoImports } from "unplugin-vue-router";
-
+import Components from "unplugin-vue-components/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -30,6 +30,10 @@ export default defineConfig({
         VueRouterAutoImports,
         "@vueuse/core",
       ],
+    }),
+    Components({
+      directoryAsNamespace: true, // 目录作为命名空间
+      collapseSamePrefixes: true, // 相同前缀的组件会合并为一个
     }),
   ],
 });
