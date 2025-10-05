@@ -1,7 +1,8 @@
+<style scoped></style>
 <template>
-  <div>layouts</div>
-  <router-view />
-  <div>footer</div>
+  <div>
+    <h1>学习</h1>
+  </div>
 </template>
 
 <script setup lang="ts"></script>

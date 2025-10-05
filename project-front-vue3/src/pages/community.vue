@@ -1,7 +1,7 @@
 <template>
-  <div>layouts</div>
-  <router-view />
-  <div>footer</div>
+  <div>
+    <h1>社区</h1>
+  </div>
 </template>
 
 <script setup lang="ts"></script>
