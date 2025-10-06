@@ -11,6 +11,11 @@
   </head>
   <body>
     <div id="app"></div>
+    <script>
+      if (/iPhone|Android|Windows Phone/i.test(navigator.userAgent)) {
+        document.body.classList.add("mobile-device");
+      }
+    </script>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

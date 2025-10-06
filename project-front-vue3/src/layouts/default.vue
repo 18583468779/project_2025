@@ -34,8 +34,14 @@
   </div>
 
   <router-view />
-  <div class="h-[4000px]"></div>
-  <div>footer</div>
+  <div>
+    <div class="mobile-hide">
+      <DefaultFooter icp="鄂ICP备19018123号-1"></DefaultFooter>
+    </div>
+    <div class="mobile">
+      <MobileNavbar></MobileNavbar>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
