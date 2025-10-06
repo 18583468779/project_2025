@@ -23,4 +23,9 @@ export default defineConfig({
     }),
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
+  theme: {
+    colors: {
+      main: "#4E98F4",
+    },
+  },
 });
