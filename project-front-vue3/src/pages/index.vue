@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { SwiperItemType } from "@/components/types";
 import bg from "../assets/images/bg.png";
+import { useThemeStore } from "../store/useThemeStore";
+const themeStore = useThemeStore();
 
 const items: SwiperItemType[] = [
   {
@@ -33,6 +35,6 @@ const items: SwiperItemType[] = [
 
 <template>
   <div>
-    <Swiper :items="items" height="36rem"></Swiper>
+    <Swiper :items="items" :height="36 * themeStore.rate + 'rem'"></Swiper>
   </div>
 </template>
