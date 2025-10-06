@@ -19,13 +19,11 @@
         >
           <Container class="h-full">
             <div class="flex flex-col justify-center items-start lt-sm:px-4">
-              <p class="text-4xl font-bold text-white" style="font-size: 4rem">
+              <p class="lt-sm:text-xl text-4xl font-bold text-white">
                 {{ item.title }}
               </p>
-              <p
-                class="text-sm text-gray-100 pt-4"
-                style="font-size: 1.5rem; padding-top: 2rem"
-              >
+              <!-- <p class="text-xl sm:text-4xl font-bold text-white">{{ item.title }}</p> -->
+              <p class="text-sm sm:text-xl text-gray-100 pt-4">
                 {{ item.subTitle }}
               </p>
             </div>

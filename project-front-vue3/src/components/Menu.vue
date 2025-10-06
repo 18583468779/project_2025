@@ -1,28 +1,56 @@
 <template>
-  <div class="flex">
-    <router-link to="/" class="item">产品</router-link>
-    <router-link to="/community" class="item">社区</router-link>
-    <router-link to="/study" class="item">学习</router-link>
-    <router-link to="/about" class="item">关于</router-link>
+  <div :class="['flex', { 'flex-col': align === 'vertical' }]">
+    <router-link class="item" to="/">产品</router-link>
+    <a class="item" href="https://www.imooc.com" target="_blank">社区</a>
+    <router-link class="item" to="/study">学习</router-link>
+    <router-link class="item" to="/about">关于</router-link>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { PropType } from "vue";
 
-<style>
-@reference "tailwindcss";
+defineProps({
+  align: {
+    type: String as PropType<"vertical" | "horizontal">, // 修正拼写错误
+    default: "horizontal", // 补充默认值
+  },
+});
+</script>
+
+<style scoped lang="scss">
+// 使用SCSS语法（带大括号和分号），兼容大多数环境
 .item {
-  @apply relative text-white text-xl px-8 py-2 cursor-pointer transition-all duration-300;
-}
-.item:hover {
-  @apply font-bold;
-}
+  // 基础样式
+  position: relative;
+  color: white;
+  font-size: 1.25rem; /* text-xl 对应20px */
+  padding-left: 2rem; /* px-8 对应8*0.25rem=2rem */
+  padding-right: 2rem;
+  padding-top: 0.5rem; /* py-2 对应2*0.25rem=0.5rem */
+  padding-bottom: 0.5rem;
+  font-weight: 300;
+  cursor: pointer;
 
-.item:after {
-  @apply content-[''] absolute bg-gray-100 w-0 h-1 bottom-0 left-[calc(50%-1rem)] transition-all duration-300;
-}
+  // 小于sm断点（640px）时的样式
+  @media (max-width: 639.9px) {
+    align-self: flex-start;
+  }
 
-.item:hover:after {
-  @apply w-8;
+  // hover状态
+  &:hover {
+    font-weight: 500;
+
+    // 下划线伪元素（默认隐藏，需要显示可打开注释）
+    &::after {
+      content: none; /* 若要显示下划线，改为 content: ''; */
+      position: absolute;
+      background-color: #f3f4f6; /* bg-gray-100 对应色值 */
+      width: 2rem; /* w-8 对应2rem */
+      height: 1px;
+      bottom: 0;
+      left: calc(50% - 1rem); /* 水平居中 */
+    }
+  }
 }
 </style>
