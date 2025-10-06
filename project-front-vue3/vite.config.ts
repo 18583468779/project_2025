@@ -11,12 +11,21 @@ import IconsResolver from "unplugin-icons/resolver";
 import Layouts from "vite-plugin-vue-layouts";
 import { viteMockServe } from "vite-plugin-mock";
 import postcssPxToViewport from "postcss-px-to-viewport-8-plugin";
+import Markdown from "unplugin-vue-markdown/vite";
+import prism from "markdown-it-prism";
+import { unheadVueComposablesImports } from "@unhead/vue";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     VueRouter(),
     UnoCSS(),
-    vue(),
+    vue({
+      include: [/\.vue$/, /\.md$/],
+    }),
+    Markdown({
+      headEnabled: true, // 开启自动生成标题
+      markdownItUses: [prism], // 高亮
+    }),
     AutoImport({
       include: [
         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
@@ -36,6 +45,7 @@ export default defineConfig({
         VueRouterAutoImports,
         "@vueuse/core",
         "pinia",
+        unheadVueComposablesImports, // 自动导入 unhead 组件
       ],
     }),
     Components({
