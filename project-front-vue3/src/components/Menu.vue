@@ -31,6 +31,7 @@ defineProps({
   padding-bottom: 0.5rem;
   font-weight: 300;
   cursor: pointer;
+  text-decoration: none;
 
   // 小于sm断点（640px）时的样式
   @media (max-width: 639.9px) {
@@ -43,11 +44,11 @@ defineProps({
 
     // 下划线伪元素（默认隐藏，需要显示可打开注释）
     &::after {
-      content: none; /* 若要显示下划线，改为 content: ''; */
+      content: ""; /* 若要显示下划线，改为 content: ''; */
       position: absolute;
       background-color: #f3f4f6; /* bg-gray-100 对应色值 */
       width: 2rem; /* w-8 对应2rem */
-      height: 1px;
+      height: 2px;
       bottom: 0;
       left: calc(50% - 1rem); /* 水平居中 */
     }

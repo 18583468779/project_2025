@@ -1,4 +1,8 @@
-import { defineConfig } from "unocss";
+import {
+  defineConfig,
+  transformerDirectives,
+  transformerVariantGroup,
+} from "unocss";
 import { presetWind, presetIcons } from "unocss";
 export default defineConfig({
   // ...UnoCSS options
@@ -18,4 +22,5 @@ export default defineConfig({
       autoInstall: true,
     }),
   ],
+  transformers: [transformerDirectives(), transformerVariantGroup()],
 });
