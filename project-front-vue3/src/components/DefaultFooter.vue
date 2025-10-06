@@ -6,7 +6,11 @@
         <!-- Mene or Props -->
         <ul class="flex justify-start flex-1">
           <li><router-link class="item" to="/">产品</router-link></li>
-          <li><a class="item" href="https://www.imooc.com" target="_blank">社区</a></li>
+          <li>
+            <a class="item" href="https://www.imooc.com" target="_blank"
+              >社区</a
+            >
+          </li>
           <li><router-link class="item" to="/study">学习</router-link></li>
           <li><router-link class="item" to="/about">关于</router-link></li>
         </ul>
@@ -15,7 +19,7 @@
             <div class="i-ic:baseline-wechat cursor-pointer"></div>
             <img
               :src="contacts.wechat || wechat"
-              class="display-none absolute top-0 left-1/2 translate-x-[-50%] translate-y-[-100%] w-20 h-20 rounded group-hover:display-block max-w-unset"
+              class="none absolute top-0 left-1/2 translate-x-[-50%] translate-y-[-100%] w-20 h-20 rounded group-hover:display-block max-w-unset"
               alt=""
             />
           </div>
@@ -23,7 +27,7 @@
             <div class="ml-4 i-bi:sina-weibo cursor-pointer"></div>
             <img
               :src="contacts.sina || sina"
-              class="display-none absolute top-0 left-1/2 translate-x-[-50%] translate-y-[-100%] w-20 h-20 rounded group-hover:display-block max-w-unset"
+              class="none absolute top-0 left-1/2 translate-x-[-50%] translate-y-[-100%] w-20 h-20 rounded group-hover:display-block max-w-unset"
               alt=""
             />
           </div>
@@ -57,7 +61,11 @@
       <!-- ICP备案信息 -->
       <div class="flex w-full justify-center">
         Copyright © {{ copyRight }} 2022-{{ new Date().getFullYear() }}
-        <a href="https://beian.miit.gov.cn/" target="_blank" class="flex pl-2 items-center">
+        <a
+          href="https://beian.miit.gov.cn/"
+          target="_blank"
+          class="flex pl-2 items-center"
+        >
           <i class="w-4 h-4 bg-contain inline-block mr-2 bg-center mr-2"></i>
           {{ icp }}
         </a>
@@ -68,46 +76,46 @@
 </template>
 
 <script setup lang="ts">
-import wechat from '@/assets/images/wechat.jpg'
-import sina from '@/assets/images/sina.jpg'
+import wechat from "@/assets/images/wechat.jpg";
+import sina from "@/assets/images/sina.jpg";
 
 interface LinkType {
-  title: string
-  url: string
+  title: string;
+  url: string;
 }
 
 interface ContactsType {
-  email: string
-  phone?: string
-  address?: string
-  wechat?: string
-  sina?: string
+  email: string;
+  phone?: string;
+  address?: string;
+  wechat?: string;
+  sina?: string;
 }
 
 interface FootItem {
-  icp?: string
-  copyRight?: string
-  links?: LinkType[]
-  contacts?: ContactsType
+  icp?: string;
+  copyRight?: string;
+  links?: LinkType[];
+  contacts?: ContactsType;
 }
 
 withDefaults(defineProps<FootItem>(), {
-  icp: '',
-  copyRight: 'toimc',
+  icp: "",
+  copyRight: "toimc",
   links: () => [
     {
-      url: 'https://www.toimc.com',
-      title: 'toimc博客'
+      url: "https://www.toimc.com",
+      title: "toimc博客",
     },
     {
-      url: 'https://www.imooc.com',
-      title: '慕课网'
-    }
+      url: "https://www.imooc.com",
+      title: "慕课网",
+    },
   ],
   contacts: () => ({
-    email: 'admin@wayearn.com'
-  })
-})
+    email: "admin@wayearn.com",
+  }),
+});
 // {
 // icp: {
 //   type: String,
@@ -117,8 +125,12 @@ withDefaults(defineProps<FootItem>(), {
 </script>
 
 <style scoped>
+.none {
+  display: none;
+}
+
 i {
-  background-image: url('@/assets/icons/beianicon.png');
+  background-image: url("@/assets/icons/beianicon.png");
 }
 .item {
   @apply px-4 text-gray-400;

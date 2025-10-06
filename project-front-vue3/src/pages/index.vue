@@ -277,19 +277,29 @@ function handleSwiperChange(e: SwiperType) {
     <Container class="py-4">
       <div class="w-2/3 h-[300px] sm:h-[400px]">
         <div class="grid grid-cols-4 grid-rows-3 h-full gap-4 p-4">
-          <div class="border col-start-1 col-span-4 row-start-1 row-span-1">
+          <div
+            class="border border-dark-100 border-solid col-start-1 col-span-4 row-start-1 row-span-1"
+          >
             1
           </div>
-          <div class="border col-start-1 col-span-2 row-start-2 row-span-2">
+          <div
+            class="border border-dark-100 border-solid col-start-1 col-span-2 row-start-2 row-span-2"
+          >
             2
           </div>
-          <div class="border col-start-3 col-span-2 row-start-2 row-span-1">
+          <div
+            class="border border-dark-100 border-solid col-start-3 col-span-2 row-start-2 row-span-1"
+          >
             3
           </div>
-          <div class="border col-start-3 col-span-1 row-start-3 row-span-1">
+          <div
+            class="border border-dark-100 border-solid col-start-3 col-span-1 row-start-3 row-span-1"
+          >
             4
           </div>
-          <div class="border col-start-4 col-span-1 row-start-3 row-span-1">
+          <div
+            class="border border-dark-100 border-solid col-start-4 col-span-1 row-start-3 row-span-1"
+          >
             5
           </div>
         </div>

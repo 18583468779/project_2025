@@ -34,7 +34,7 @@
   </div>
 
   <router-view />
-  <div>
+  <div class="mt-10">
     <div class="mobile-hide">
       <DefaultFooter icp="鄂ICP备19018123号-1"></DefaultFooter>
     </div>
