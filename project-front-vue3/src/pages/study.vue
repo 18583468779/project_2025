@@ -15,10 +15,13 @@
         <Container>
           <div class="flex justify-between w-full">
             <!-- 分类 -->
-            <ul class="flex types text-white">
+            <ul
+              class="flex types text-white"
+              v-if="$route.name === '/study/cart'"
+            >
               <li class="active item">购物车</li>
             </ul>
-            <ul class="flex types text-white">
+            <ul class="flex types text-white" v-else>
               <li class="active item">每日一课</li>
               <li class="item">精品微课</li>
               <li class="item">学习计划</li>
