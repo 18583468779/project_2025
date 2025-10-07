@@ -27,7 +27,7 @@
         <!-- for遍历的内容：课程 -->
         <a
           v-for="(item, index) in homeStore.projects"
-          :href="item.url"
+          :href="item?.url"
           target="_blank"
           :key="index"
           class="flex group transition-all hover:(bg-sky-500 shadow-lg text-white transform-translate-y--1)"
@@ -36,7 +36,7 @@
             class="w-full rounded-0 card"
             :icon="item.icon"
             image-type="rounded"
-            :title="item.title"
+            :title="item?.title"
             :sub-title="item.subTitle"
             border
           >
@@ -67,7 +67,7 @@
         class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-full lt-sm:px-4"
       >
         <a
-          :href="item.url"
+          :href="item?.url"
           target="_blank"
           v-for="(item, index) in homeStore.courses"
           :key="index"
@@ -75,9 +75,9 @@
         >
           <Card
             class="w-full rounded-3 transition-all hover:(transform-translate-y--1 shadow-lg)"
-            :image="item.image"
+            :image="item?.image"
             image-type="rounded"
-            :title="item.title"
+            :title="item?.title"
             :sub-title="item.subTitle"
             border
           >
@@ -111,9 +111,9 @@
       <div
         class="lt-sm:display-none sm:(w-1/3) bg-coolgray-700 self-stretch flex flex-col justify-center px-4"
       >
-        <a v-if="selectItem" :href="selectItem.url" target="_blank">
+        <a v-if="selectItem" :href="selectItem?.url" target="_blank">
           <div class="text-2xl font-bold pb-4 text-gray-100">
-            {{ selectItem.title }}
+            {{ selectItem?.title }}
           </div>
           <div class="text-sm">{{ selectItem.subTitle }}</div>
           <div class="flex items-center justify-between mb-4">查看更多</div>
@@ -142,7 +142,7 @@
             <div
               class="h-full w-full bg-no-repeat bg-contain bg-center"
               :style="{
-                'background-image': `url('${item.image}')`
+                'background-image': `url('${item?.image}')`
               }"
             ></div>
           </div>

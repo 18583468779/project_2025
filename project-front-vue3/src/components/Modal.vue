@@ -12,8 +12,7 @@
             class="btn-plain px-6"
             @click="
               () => {
-                show = false
-                $emit('submit')
+                show = false;
               }
             "
           >
@@ -27,7 +26,7 @@
 
 <script setup lang="ts">
 // vue3.3 -> 实验特性
-const show = defineModel({ default: false })
+const show = defineModel({ default: false });
 </script>
 
 <style scoped lang="scss"></style>

@@ -53,7 +53,7 @@
             <span>友链信息</span>
           </div>
           <p v-for="(item, index) in links" :key="index">
-            <a :href="item.url" target="_blank">{{ item.title }}</a>
+            <a :href="item?.url" target="_blank">{{ item?.title }}</a>
           </p>
         </li>
         <slot name="info"></slot>

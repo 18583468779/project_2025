@@ -2,7 +2,7 @@
   <ul>
     <li v-for="(item, index) in items" :key="index">
       <div class="text-xl">
-        {{ `${index < 10 ? '0' + (index + 1) : index + 1} ${item.title}` }}
+        {{ `${index < 10 ? "0" + (index + 1) : index + 1} ${item?.title}` }}
       </div>
       <ul class="pt-4">
         <li
@@ -15,7 +15,9 @@
             <i v-if="child.type === 'video'" class="i-mdi:video"></i>
             <i v-else-if="child.type === 'paper'" class="i-mdi:paper"></i>
           </span>
-          <span> {{ `${index + 1}-${childIndex + 1}` }} {{ child.title }} </span>
+          <span>
+            {{ `${index + 1}-${childIndex + 1}` }} {{ child.title }}
+          </span>
         </li>
       </ul>
     </li>
@@ -23,15 +25,15 @@
 </template>
 
 <script setup lang="ts" generic="T extends {title: string, children: any}">
-import type { GenericType } from './types'
+import type { GenericType } from "./types";
 
-defineProps<GenericType<T>>()
+defineProps<GenericType<T>>();
 
-const emits = defineEmits(['click'])
+const emits = defineEmits(["click"]);
 
 const handleClick = (item) => {
-  emits('click', item)
-}
+  emits("click", item);
+};
 </script>
 
 <style scoped></style>

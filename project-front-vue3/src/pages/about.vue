@@ -50,7 +50,7 @@
             <div
               class="col-start-1 col-span-1 border-r-1 border-r-gray-100 h-full lt-lg:(display-none) dot"
             >
-              {{ item.title }}
+              {{ item?.title }}
             </div>
             <div
               class="col-start-2 col-span-4 pl-4 lt-lg:(col-start-1 col-span-5)"

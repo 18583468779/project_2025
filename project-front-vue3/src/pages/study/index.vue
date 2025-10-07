@@ -7,7 +7,7 @@
     <Container>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full lt-sm:px-4 py-4">
         <a
-          :href="item.url"
+          :href="item?.url"
           target="_blank"
           v-for="(item, index) in recommend"
           :key="index"
@@ -15,9 +15,9 @@
         >
           <Card
             class="w-full rounded-3 transition-all hover:(transform-translate-y--1 shadow-lg)"
-            :image="item.image"
+            :image="item?.image"
             image-type="rounded"
-            :title="item.title"
+            :title="item?.title"
             border
           >
             <template #default>
@@ -60,7 +60,7 @@
         <!-- 左侧 row*2 col*2 -->
         <div class="lg:(col-start-1 col-span-2 row-start-1 row-span-2)">
           <a
-            :href="item.url"
+            :href="item?.url"
             target="_blank"
             v-for="(item, index) in [recommend[0]]"
             :key="index"
@@ -68,10 +68,10 @@
           >
             <Card
               class="w-full rounded-3 flex-1 h-full flex flex-col pb-4 justify-between transition-all hover:(transform-translate-y--1 shadow-lg)"
-              :image="item.image"
+              :image="item?.image"
               :height="'lg:(h-65)'"
               image-type="rounded"
-              :title="item.title"
+              :title="item?.title"
               :clamp="2"
               border
             >
@@ -88,13 +88,13 @@
         </div>
         <!-- 右侧 8 * item -> row*2 col*4 -->
         <div v-for="(item, index) in [...recommend, ...recommend]" :key="index">
-          <a :href="item.url" target="_blank" class="flex">
+          <a :href="item?.url" target="_blank" class="flex">
             <Card
               class="w-full rounded-3 transition-all hover:(transform-translate-y--1 shadow-lg)"
               height="h-30"
-              :image="item.image"
+              :image="item?.image"
               image-type="rounded"
-              :title="item.title"
+              :title="item?.title"
               title-class="py-1 px-4 text-lg"
               :clamp="2"
               border
@@ -127,7 +127,7 @@
     <Container class="overflow-x-auto">
       <div class="grid grid-cols-[repeat(4,1fr)] gap-3 w-full lt-sm:px-4 py-4">
         <a
-          :href="item.url"
+          :href="item?.url"
           target="_blank"
           v-for="(item, index) in [...recommend, ...recommend]"
           :key="index"
@@ -135,9 +135,9 @@
         >
           <Card
             class="w-full rounded-3 transition-all hover:(transform-translate-y--1 shadow-lg)"
-            :image="item.image"
+            :image="item?.image"
             image-type="rounded"
-            :title="item.title"
+            :title="item?.title"
             border
           >
             <template #default>
@@ -176,14 +176,14 @@
         >
           <div
             class="absolute w-full h-full bg-cover bg-center rounded-3 overflow-hidden"
-            :style="{ 'background-image': 'url(' + item.image + ')' }"
+            :style="{ 'background-image': 'url(' + item?.image + ')' }"
           >
             <div
               class="bg-black bg-opacity-30 w-full h-full group-hover:display-none"
             ></div>
           </div>
           <div class="z-30 px-4 line-clamp-3 text-base lg:text-xl text-white">
-            {{ item.title }}
+            {{ item?.title }}
           </div>
         </div>
       </div>
@@ -195,7 +195,7 @@
     <Container class="overflow-x-auto">
       <div class="grid grid-cols-[repeat(4,1fr)] gap-3 w-full lt-sm:px-4 py-4">
         <a
-          :href="item.url"
+          :href="item?.url"
           target="_blank"
           v-for="(item, index) in [...recommend, ...recommend]"
           :key="index"
@@ -203,9 +203,9 @@
         >
           <Card
             class="w-full rounded-3 transition-all hover:(transform-translate-y--1 shadow-lg)"
-            :image="item.image"
+            :image="item?.image"
             image-type="rounded"
-            :title="item.title"
+            :title="item?.title"
             border
           >
             <template #default>

@@ -13,6 +13,7 @@ declare module 'vue' {
     Comments: typeof import('./src/components/Comments.vue')['default']
     Container: typeof import('./src/components/Container.vue')['default']
     DefaultFooter: typeof import('./src/components/DefaultFooter.vue')['default']
+    ElButton: typeof import('element-plus/es')['ElButton']
     FreeSwiper: typeof import('./src/components/FreeSwiper.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     ImageSwiper: typeof import('./src/components/ImageSwiper.vue')['default']
