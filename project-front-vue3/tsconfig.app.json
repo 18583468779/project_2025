@@ -16,12 +16,14 @@
     }
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
+    "env.d.ts",
+    "src/**/*",
     "src/**/*.vue",
-    "src/**/*.d.ts",
     "typed-router.d.ts",
     "auto-imports.d.ts",
-    "components.d.ts"
+    "components.d.ts",
+    "mock/**/*",
+    "mock/**/*.ts",
+    "mock/**/*.json"
   ]
 }

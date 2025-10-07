@@ -1,156 +1,9 @@
-<script setup lang="ts">
-import type { SwiperItemType } from "@/components/types";
-import bg from "../assets/images/bg.png";
-import { useThemeStore } from "../store/useThemeStore";
-const themeStore = useThemeStore();
-const selectItem = ref({
-  image: bg,
-  title: "传播技术的种子",
-  subTitle: "让技术没有门槛，让沟通没有障碍",
-});
-const items: SwiperItemType[] = [
-  {
-    image: bg,
-    title: "传播技术的种子",
-    subTitle: "让技术没有门槛，让沟通没有障碍",
-  },
-  {
-    image: bg,
-    title: "传播技术的种子",
-    subTitle: "让技术没有门槛，让沟通没有障碍",
-  },
-  {
-    image: bg,
-    title: "传播技术的种子",
-    subTitle: "让技术没有门槛，让沟通没有障碍",
-  },
-  {
-    image: bg,
-    title: "传播技术的种子",
-    subTitle: "让技术没有门槛，让沟通没有障碍",
-  },
-  {
-    image: bg,
-    title: "传播技术的种子",
-    subTitle: "让技术没有门槛，让沟通没有障碍",
-  },
-];
-const courses = [
-  {
-    image: bg,
-    title: "传播技术的种子",
-    subTitle: "让技术没有门槛，让沟通没有障碍",
-  },
-  {
-    image: bg,
-    title: "传播技术的种子",
-    subTitle: "让技术没有门槛，让沟通没有障碍",
-  },
-  {
-    image: bg,
-    title: "传播技术的种子",
-    subTitle: "让技术没有门槛，让沟通没有障碍",
-  },
-  {
-    image: bg,
-    title: "传播技术的种子",
-    subTitle: "让技术没有门槛，让沟通没有障碍",
-  },
-  {
-    image: bg,
-    title: "传播技术的种子",
-    subTitle: "让技术没有门槛，让沟通没有障碍",
-  },
-  {
-    image: bg,
-    title: "传播技术的种子",
-    subTitle: "让技术没有门槛，让沟通没有障碍",
-  },
-  {
-    image: bg,
-    title: "传播技术的种子",
-    subTitle: "让技术没有门槛，让沟通没有障碍",
-  },
-  {
-    image: bg,
-    title: "传播技术的种子",
-    subTitle: "让技术没有门槛，让沟通没有障碍",
-  },
-];
-const projects = [
-  {
-    icon: "i-mdi:web",
-    title: "云服务",
-    subTitle: "基于云平台的服务",
-    url: "https://www.toimc.com/cloud",
-  },
-  {
-    icon: "i-mdi:web",
-
-    title: "云服务",
-    subTitle: "基于云平台的服务",
-    url: "https://www.toimc.com/cloud",
-  },
-  {
-    icon: "i-mdi:web",
-
-    title: "云服务",
-    subTitle: "基于云平台的服务",
-    url: "https://www.toimc.com/cloud",
-  },
-  {
-    icon: "i-mdi:web",
-
-    title: "云服务",
-    subTitle: "基于云平台的服务",
-    url: "https://www.toimc.com/cloud",
-  },
-  {
-    icon: "i-mdi:web",
-
-    title: "云服务",
-    subTitle: "基于云平台的服务",
-    url: "https://www.toimc.com/cloud",
-  },
-  {
-    icon: "i-mdi:web",
-
-    title: "云服务",
-    subTitle: "基于云平台的服务",
-    url: "https://www.toimc.com/cloud",
-  },
-  {
-    icon: "i-mdi:web",
-
-    title: "云服务",
-    subTitle: "基于云平台的服务",
-    url: "https://www.toimc.com/cloud",
-  },
-  {
-    icon: "i-mdi:web",
-
-    title: "云服务",
-    subTitle: "基于云平台的服务",
-    url: "https://www.toimc.com/cloud",
-  },
-];
-const partners = ref([
-  "https://wayearn.static.toimc.com/partner/logo1.png",
-  "https://wayearn.static.toimc.com/partner/logo2.png",
-  "https://wayearn.static.toimc.com/partner/logo8.png",
-  "https://wayearn.static.toimc.com/partner/logo5.png",
-  "https://wayearn.static.toimc.com/partner/logo6.png",
-  "https://wayearn.static.toimc.com/partner/logo7.png",
-]);
-function handleSwiperChange(e: SwiperType) {
-  const index = e.activeIndex;
-  selectItem.value = items[index];
-}
-</script>
-
 <template>
-  <div>
-    <Swiper :items="items" :height="36 * themeStore.rate + 'rem'"></Swiper>
+  <div class="pb-15">
+    <Swiper
+      :items="homeStore.swipers"
+      :height="36 * store.rate + 'rem'"
+    ></Swiper>
     <Container>
       <!-- 标题 -->
       <div class="py-4">
@@ -173,7 +26,7 @@ function handleSwiperChange(e: SwiperType) {
       >
         <!-- for遍历的内容：课程 -->
         <a
-          v-for="(item, index) in projects"
+          v-for="(item, index) in homeStore.projects"
           :href="item.url"
           target="_blank"
           :key="index"
@@ -216,7 +69,7 @@ function handleSwiperChange(e: SwiperType) {
         <a
           :href="item.url"
           target="_blank"
-          v-for="(item, index) in courses"
+          v-for="(item, index) in homeStore.courses"
           :key="index"
           class="flex"
         >
@@ -250,8 +103,8 @@ function handleSwiperChange(e: SwiperType) {
     </Container>
     <Container class="w-full text-gray-400">
       <Swiper
-        :items="items"
-        :height="(width > 640 ? 28 : 40) * themeStore.rate + 'rem'"
+        :items="homeStore.swiperProjects"
+        :height="(width > 640 ? 28 : 40) * store.rate + 'rem'"
         class="w-full sm:w-2/3"
         @change="handleSwiperChange"
       ></Swiper>
@@ -273,33 +126,49 @@ function handleSwiperChange(e: SwiperType) {
     </Container>
     <Container>
       <FreeSwiper :items="partners"></FreeSwiper>
+      <!-- <Swiper
+        :items="partners"
+        :slides-per-view="4"
+        :height="'200px'"
+        :freeMode="true"
+        :space-between="50"
+        :pagination="{ clickable: true }"
+        :navigation="undefined"
+        loop
+        :pagination_hide="true"
+      >
+        <template #default="{ item }">
+          <div class="px-2 lt-sm:h-20 sm:h-36 w-full bg-gray-100">
+            <div
+              class="h-full w-full bg-no-repeat bg-contain bg-center"
+              :style="{
+                'background-image': `url('${item.image}')`
+              }"
+            ></div>
+          </div>
+        </template>
+        method 1 
+        <template #pagination>
+          <span></span>
+        </template>
+      </Swiper> -->
     </Container>
     <Container class="py-4">
       <div class="w-2/3 h-[300px] sm:h-[400px]">
         <div class="grid grid-cols-4 grid-rows-3 h-full gap-4 p-4">
-          <div
-            class="border border-dark-100 border-solid col-start-1 col-span-4 row-start-1 row-span-1"
-          >
+          <div class="border col-start-1 col-span-4 row-start-1 row-span-1">
             1
           </div>
-          <div
-            class="border border-dark-100 border-solid col-start-1 col-span-2 row-start-2 row-span-2"
-          >
+          <div class="border col-start-1 col-span-2 row-start-2 row-span-2">
             2
           </div>
-          <div
-            class="border border-dark-100 border-solid col-start-3 col-span-2 row-start-2 row-span-1"
-          >
+          <div class="border col-start-3 col-span-2 row-start-2 row-span-1">
             3
           </div>
-          <div
-            class="border border-dark-100 border-solid col-start-3 col-span-1 row-start-3 row-span-1"
-          >
+          <div class="border col-start-3 col-span-1 row-start-3 row-span-1">
             4
           </div>
-          <div
-            class="border border-dark-100 border-solid col-start-4 col-span-1 row-start-3 row-span-1"
-          >
+          <div class="border col-start-4 col-span-1 row-start-3 row-span-1">
             5
           </div>
         </div>
@@ -314,8 +183,44 @@ function handleSwiperChange(e: SwiperType) {
         </div>
       </div>
     </Container>
+    <!-- <ReloadPrompt></ReloadPrompt> -->
   </div>
 </template>
+
+<script setup lang="ts">
+// import type { SwiperItemType } from '@/components/types'
+import { useThemeStore } from "../store/useThemeStore";
+import { useHomeStore } from "../store/useHomeStore";
+
+import type { Swiper as SwiperType } from "swiper";
+
+const store = useThemeStore();
+const homeStore = useHomeStore();
+
+const { width } = useWindowSize();
+const selectItem = ref();
+
+const partners = ref([
+  "https://wayearn.static.toimc.com/partner/logo1.png",
+  "https://wayearn.static.toimc.com/partner/logo2.png",
+  "https://wayearn.static.toimc.com/partner/logo8.png",
+  "https://wayearn.static.toimc.com/partner/logo5.png",
+  "https://wayearn.static.toimc.com/partner/logo6.png",
+  "https://wayearn.static.toimc.com/partner/logo7.png",
+]);
+
+onBeforeMount(async () => {
+  await homeStore.fetchData();
+  selectItem.value = homeStore.swipers[0];
+  // console.log('🚀 ~ file: index.vue:192 ~ onBeforeMount ~ homeStore.swipers:', homeStore.swipers)
+});
+
+function handleSwiperChange(e: SwiperType) {
+  const index = e.activeIndex;
+  selectItem.value = homeStore.swipers[index];
+}
+</script>
+
 <style scoped lang="scss">
 :deep(.card) {
   &:hover {

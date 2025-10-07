@@ -12,6 +12,7 @@
     "@tailwindcss/vite": "^4.1.14",
     "@unhead/vue": "^2.0.17",
     "@vueuse/core": "^13.9.0",
+    "axios": "^1.12.2",
     "element-plus": "^2.11.4",
     "pinia": "^3.0.3",
     "reset-css": "^5.0.2",
