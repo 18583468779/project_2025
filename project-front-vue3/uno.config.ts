@@ -8,6 +8,7 @@ export default defineConfig({
   // ...UnoCSS options
   shortcuts: {
     "bg-image": "w-full h-full bg-cover bg-no-repeat bg-center-top",
+    border: "border border-1 border-solid border-gray",
   },
   presets: [
     presetWind(),
