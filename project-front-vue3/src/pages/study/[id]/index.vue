@@ -1,12 +1,12 @@
 <template>
-  <div>id:{{ route.params.id }}</div>
   <div>
-    <router-view></router-view>
+    style 里
+    <md />
   </div>
 </template>
 
 <script setup lang="ts">
-const route = useRoute();
+import md from "../test.md";
 </script>
 
 <style scoped></style>
