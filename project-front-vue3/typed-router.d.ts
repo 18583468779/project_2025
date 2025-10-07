@@ -22,8 +22,10 @@ declare module 'vue-router/auto-routes' {
     '/[...path]': RouteRecordInfo<'/[...path]', '/:path(.*)', { path: ParamValue<true> }, { path: ParamValue<false> }>,
     '/about': RouteRecordInfo<'/about', '/about', Record<never, never>, Record<never, never>>,
     '/community': RouteRecordInfo<'/community', '/community', Record<never, never>, Record<never, never>>,
+    '/study': RouteRecordInfo<'/study', '/study', Record<never, never>, Record<never, never>, '/study/' | '/study/[id]' | '/study/test'>,
     '/study/': RouteRecordInfo<'/study/', '/study', Record<never, never>, Record<never, never>>,
     '/study/[id]': RouteRecordInfo<'/study/[id]', '/study/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
+    '/study/test': RouteRecordInfo<'/study/test', '/study/test', Record<never, never>, Record<never, never>>,
   }
 
   /**
@@ -53,12 +55,20 @@ declare module 'vue-router/auto-routes' {
       routes: '/community'
       views: never
     }
+    'src/pages/study.vue': {
+      routes: '/study' | '/study/' | '/study/[id]' | '/study/test'
+      views: 'default'
+    }
     'src/pages/study/index.vue': {
       routes: '/study/'
       views: never
     }
     'src/pages/study/[id].vue': {
       routes: '/study/[id]'
+      views: never
+    }
+    'src/pages/study/test.md': {
+      routes: '/study/test'
       views: never
     }
   }

@@ -14,10 +14,13 @@ import postcssPxToViewport from "postcss-px-to-viewport-8-plugin";
 import Markdown from "unplugin-vue-markdown/vite";
 import prism from "markdown-it-prism";
 import { unheadVueComposablesImports } from "@unhead/vue";
+import path from "path";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    VueRouter(),
+    VueRouter({
+      extensions: [".vue", ".md"],
+    }),
     UnoCSS(),
     vue({
       include: [/\.vue$/, /\.md$/],
@@ -25,6 +28,9 @@ export default defineConfig({
     Markdown({
       headEnabled: true, // 开启自动生成标题
       markdownItUses: [prism], // 高亮
+      markdownItOptions: {
+        html: true,
+      },
     }),
     AutoImport({
       include: [
@@ -52,6 +58,7 @@ export default defineConfig({
       directoryAsNamespace: true, // 目录作为命名空间
       collapseSamePrefixes: true, // 相同前缀的组件会合并为一个
       resolvers: [ElementPlusResolver(), IconsResolver({ prefix: "icon" })], // 自动导入 Element Plus 组件, 自动导入图标组件
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/], // 已包含 .md 文件
     }),
     Icons({
       autoInstall: true, // 自动安装图标
@@ -68,7 +75,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": "/src",
+      "@": path.resolve(__dirname, "src"),
     },
   },
   css: {
