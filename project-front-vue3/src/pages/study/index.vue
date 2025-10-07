@@ -49,7 +49,10 @@
     <!-- 每日一课 -->
     <Container class="flex-col">
       <!-- tabs -->
-      <!-- <Tabs :items="['Java', 'Vue', 'React', '小程序']" v-model="activeIndex"></Tabs> -->
+      <Tabs
+        :items="['Java', 'Vue', 'React', '小程序']"
+        v-model="activeIndex"
+      ></Tabs>
       <!-- Grid -->
       <div
         class="grid grid-cols-2 py-4 lt-sm:px-4 sm:grid-cols-3 lg:(grid-cols-6 grid-rows-2 ) gap-3"
