@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-red-500 shadow-orange-400 text-xl">
     home 主页
     <button @click="store.increment">+ {{ store.count }}</button>
     <nuxt-link to="/about">about</nuxt-link>
