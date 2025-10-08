@@ -1,6 +1,16 @@
+<script lang="ts" setup>
+const route = useRoute();
+const { data: page } = await useAsyncData(route.path, () => {
+  return queryCollection("content").path(route.path).first();
+});
+</script>
+
 <template>
   <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
+    <header><!-- ... --></header>
+
+    <ContentRenderer v-if="page" :value="page" />
+    <NuxtPage />
+    <footer><!-- ... --></footer>
   </div>
 </template>
